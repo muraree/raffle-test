@@ -1,0 +1,20 @@
+<div class='page-header'>
+  <h2>Raffle Test</h2>
+</div>
+<div class="main-container">
+  <div class="row">
+    <div class="center-block">
+      <% if user_signed_in? %>
+        <div class="text-center card-text">
+          <p> Thanks for signing up!</p>
+          <p> Your odds of winning are <%= current_user.winning_percentage %> % !</p>
+        </div>
+      <% else %>
+        <h1>Hello,</h1>
+        <p>Welcome to Raffle Test.</p>
+        <p>Here you can signup with raffles and check the winning percentages.</p>
+        <%= link_to 'Signup', new_user_registration_path, class: 'btn btn-info pull-left' %>
+      <% end %>
+    </div>
+  </div>
+</div>
