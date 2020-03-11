@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: { case_sensitive: false, scope: :raffle }, format: {with: Devise.email_regexp}
   validates :password, presence: true, confirmation: true, length: { within: Devise.password_length}
+
+  def calculate_percentage
+    (100 / raffle.users.count)
+  end
 end

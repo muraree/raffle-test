@@ -4,7 +4,7 @@
       <% if user_signed_in? %>
         <div class="text-center card-text">
           <p> Thanks for signing up!</p>
-          <p> Your odds of winning are <%= current_user.winning_percentage %> % !</p>
+          <p> Your odds of winning are <%= current_user.calculate_percentage %> % !</p>
         </div>
       <% else %>
         <h1>Hello,</h1>
